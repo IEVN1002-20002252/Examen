@@ -1,0 +1,38 @@
+/* Fondo general de la aplicación con un tono cálido y suave */
+body {
+  background-color: #fdfbf7;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Estilo para los bloques principales (formulario, detalle, ventas) */
+.card-pizzeria {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+/* Encabezados temáticos estilo pizzería */
+.titulo-seccion {
+  color: #d9534f;
+  font-weight: 700;
+  border-bottom: 2px solid #f0ad4e;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+/* Botones personalizados con estilo vibrante */
+.btn-pizzeria {
+  background-color: #d9534f;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.btn-pizzeria:hover {
+  background-color: #c9302c;
+  color: white;
+}

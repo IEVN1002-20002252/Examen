@@ -1,0 +1,42 @@
+<div class="border border-dark border-4 p-3 h-100 d-flex flex-column" style="background-color: #9cb4d4">
+  <div class="bg-white flex-grow-1 p-2" style="min-height: 200px; overflow-y: auto;">
+    <table class="table table-bordered table-sm text-center mb-0">
+      <thead class="table-light">
+        <tr>
+          <th>Tamaño</th>
+          <th>Ingredientes</th>
+          <th>Num. Pizzas</th>
+          <th>SubTotal</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Usamos un bloque @for (Angular 17+) o *ngFor -->
+        <tr *ngFor="let pizza of pizzas; let i = index">
+          <td>{{ pizza.tamano }}</td>
+          <td>{{ pizza.ingredientes.join(', ') || 'Sin ingredientes' }}</td>
+          <td>{{ pizza.num_pizzas }}</td>
+          <td>${{ pizza.subtotal }}</td>
+          <td>
+            <button class="btn btn-sm btn-danger py-0" (click)="quitarPizza(i)">
+              X
+            </button>
+          </td>
+        </tr>
+        <!-- Fila vacía si no hay pizzas -->
+        <tr *ngIf="pizzas.length === 0">
+          <td colspan="5" class="text-muted py-4">No hay pizzas agregadas aún</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="d-flex justify-content-between mt-3 px-4">
+    <button class="btn btn-light px-4 border border-dark" (click)="quitarPizza(pizzas.length - 1)">
+      Quitar
+    </button>
+    <button class="btn btn-light px-4 border border-dark" (click)="terminarPedido()">
+      Terminar
+    </button>
+  </div>
+</div>
